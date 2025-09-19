@@ -1,0 +1,7 @@
+employer_size,fee_type,amount_gbp,periodicity
+small_or_medium,licence_fee,536,one_off
+small_or_medium,immigration_skills_charge,364,yearly
+small_or_medium,visa_cost_employer_contrib,1000,one_off
+large,licence_fee,1476,one_off
+large,immigration_skills_charge,1000,yearly
+large,visa_cost_employer_contrib,1000,one_off

@@ -1,0 +1,3 @@
+scenario_id,employer_size,rehire_cycle_months,base_value_add_year1_gbp,growth_rate_yearly,loyalty_saving_yearly_gbp,recruitment_cost_per_hire_gbp,training_cost_per_hire_gbp
+sponsorship,small_or_medium,24,15000,0.1,2000,5000,3000
+no_sponsorship,small_or_medium,24,15000,0.0,0,5000,3000
