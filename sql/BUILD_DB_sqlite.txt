@@ -1,0 +1,21 @@
+# Build the SQLite database from your CSVs (macOS/Linux/Windows PowerShell if sqlite3 is installed)
+# Run these from the ROOT of your repo (where data_sql/ and sql/ exist).
+
+# 1) Create the database and raw tables
+sqlite3 sponsorship_roi.db ".read sql/schema.sql"
+
+# 2) Import CSVs (IMPORTANT: order of columns in CSV matches the CREATE TABLE)
+sqlite3 sponsorship_roi.db ".mode csv" ".import data_sql/scenarios.csv scenarios"
+sqlite3 sponsorship_roi.db ".mode csv" ".import data_sql/fees.csv      fees"
+sqlite3 sponsorship_roi.db ".mode csv" ".import data_sql/periods.csv   periods"
+
+# 3) Verify row counts
+sqlite3 sponsorship_roi.db "SELECT COUNT(*) AS scenarios_rows FROM scenarios;"
+sqlite3 sponsorship_roi.db "SELECT COUNT(*) AS fees_rows FROM fees;"
+sqlite3 sponsorship_roi.db "SELECT COUNT(*) AS periods_rows FROM periods;"
+
+# 4) Create STEP 1 analysis views (benefits only)
+sqlite3 sponsorship_roi.db ".read sql/analysis_step1.sql"
+
+# 5) Preview first 6 months of benefits
+sqlite3 sponsorship_roi.db "SELECT * FROM v_monthly_benefits_step1 WHERE month_index <= 6 ORDER BY scenario_id, month_index;"
