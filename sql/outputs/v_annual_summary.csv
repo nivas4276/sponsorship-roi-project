@@ -1,0 +1,11 @@
+scenario_id,year_num,year_start,net_gbp_year
+no_sponsorship,1,2025-01-01,7000
+no_sponsorship,2,2026-01-01,15000
+no_sponsorship,3,2027-01-01,7000
+no_sponsorship,4,2028-01-01,15000
+no_sponsorship,5,2029-01-01,7000
+sponsorship,1,2025-01-01,15807.01
+sponsorship,2,2026-01-01,18987.74
+sponsorship,3,2027-01-01,20804.69
+sponsorship,4,2028-01-01,22811.86
+sponsorship,5,2029-01-01,25029.26
