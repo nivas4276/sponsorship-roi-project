@@ -43,10 +43,11 @@ Using SQL for modelling and Tableau for visualization, I built a complete 5-year
 ### 📈 Tableau Dashboard
 
 Explore the interactive dashboard here:  
-🔗 **[Tableau Public: 5-Year ROI of Sponsorship](https://public.tableau.com/)**  
+🔗 **[Tableau Public: 5-Year ROI of Sponsorship]([https://public.tableau.com/](https://public.tableau.com/app/profile/durga.chitti.srinivasarao.bejawada/vizzes))**  
 
 You can also download the packaged workbook to explore locally:  
-📁 **[outputs/Sponsorship_ROI_Dashboard.twbx](outputs/Sponsorship_ROI_Dashboard.twbx)**  
+📁 **[outputs/Sponsorship_ROI_Dashboard.twbx](sponsorship-roi-project/sql/outputs
+/5-Year ROI of Sponsorship_ A Data-Driven Case Study for UK Employers.twbx)**  
 
 Dashboard preview 👇  
 ![Dashboard preview](outputs/dashboard_hero.png)
