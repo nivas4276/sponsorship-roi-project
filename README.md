@@ -48,7 +48,7 @@ Using SQL for modelling and Tableau for visualization, I built a complete 5-year
 - **Download workbook (.twbx):** [outputs/5-Year ROI of Sponsorship_ A Data-Driven Case Study for UK Employers.twbx](outputs/5-Year%20ROI%20of%20Sponsorship_%20A%20Data-Driven%20Case%20Study%20for%20UK%20Employers.twbx)
 
 - **Preview image:**  
-  ![Dashboard preview](outputs/Dashboard%201.png)
+  ![Dashboard preview](Dashboard1.png)
 
 
 ---
