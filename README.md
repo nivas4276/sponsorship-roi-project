@@ -1,95 +1,84 @@
-# 📊 Sponsorship ROI Project
-**5-Year ROI Case Study: Why Sponsoring a Data Analyst is a High-Value Investment**
+# 📊 5-Year ROI of Sponsorship – A Data Analytics Case Study
+
+### 💡 Project Objective
+This project answers a critical business question for UK employers:  
+**“When does sponsoring international talent actually start paying back?”**
+
+Using SQL for modelling and Tableau for visualization, I built a complete 5-year ROI analysis comparing sponsorship vs. non-sponsorship hiring decisions — showing how long-term retention and reduced turnover drive profit, not cost.
 
 ---
 
-## 🧭 Executive Summary (for Hiring Managers & HR)
+### 🧱 Project Structure
 
-### Problem  
-UK employers often see visa sponsorship as a **cost burden** (licence fee, visa contribution, Immigration Skills Charge). This perception discourages sponsorship of international talent.
-
-### Solution  
-A **SQL-first, transparent 5-year model** comparing:
-- **Sponsorship** → upfront fees, but **compounding value** and **retention**.
-- **No Sponsorship** → avoids visa fees, but suffers **recurring recruitment/training costs** and **lost knowledge**.
-
-### Results (will be filled as the project progresses)  
-- **Break-even:** within **[X months]** (after Net & Cumulative steps).  
-- **5-year outcome:** Sponsorship shows **higher cumulative net value** under conservative assumptions.  
-- All assumptions live in editable CSVs so employers can **plug in their own numbers**.
-
-### Why This Matters  
-Sponsorship isn’t just a compliance expense; it’s a **strategic investment** in capability, speed, and decision quality. This project **quantifies** that investment.
-
-### Why Me  
-I designed and built this project from scratch to answer a real employer question—**“Why should we sponsor this candidate?”**  
-It demonstrates my strengths in:
-- **SQL & analytics modelling**
-- **Decision-ready dashboards**
-- **Business storytelling & stakeholder communication**
+| Folder | Description |
+|---------|--------------|
+| **data_sql/** | Raw input data for base scenarios, sponsorship fees, and time periods. |
+| **sql/** | SQL scripts for creating tables, calculating ROI logic, and verifying outputs. |
+| **outputs/** | Final results — ROI CSVs, visual charts, and Tableau dashboard file (.twbx). |
+| **visualize_roi.py** | Python automation script for exporting SQL results and generating charts. |
 
 ---
 
-## 📌 What is this project?
-A **portfolio case study** that models two scenarios over 60 months (5 years):
-1. **Sponsorship** — fees + compounding analyst value + loyalty/retention benefits  
-2. **No Sponsorship** — no visa fees but periodic re-hire + training costs and no compounding value
+### 🔍 Key Insights
 
-All assumptions are **plain CSV inputs**, and all calculations are **SQL** (auditable, portable).
-
----
-
-## 🗂️ Repository Structure
-
+- **Break-even in Month 1:** Sponsorship delivers a **+£6.6K net advantage** immediately by avoiding recruitment/training costs.  
+- **Year 3 ROI:** Sponsorship ≈ **£20.8K** vs. **£7K** (non-sponsorship).  
+- **Year 5 ROI:** Sponsorship ≈ **£25K** vs. **£7K** cumulative.  
+- **Retention impact:** Sponsored employees stay longer, reducing turnover and rehire cycles by ~2.5x.  
+- **Conclusion:** Sponsorship isn’t a cost — it’s a **strategic long-term investment**.
 
 ---
 
-## 🧱 Raw Inputs (what each file contains)
+### 🧠 Tools & Tech Stack
 
-**`data_sql/scenarios.csv`**
-- `scenario_id` → `sponsorship` / `no_sponsorship`  
-- `employer_size` → `small_or_medium` (test `large` later)  
-- `rehire_cycle_months` → e.g., 24 (every 2 years)  
-- `base_value_add_year1_gbp` → conservative Year-1 value created by the analyst  
-- `growth_rate_yearly` → sponsorship learning/compounding (0 for no_sponsorship in Step 1)  
-- `loyalty_saving_yearly_gbp` → retention/continuity proxy (0 for no_sponsorship in Step 1)  
-- `recruitment_cost_per_hire_gbp`, `training_cost_per_hire_gbp` → used in costs step  
-
-**`data_sql/fees.csv`**
-- `employer_size` → `small_or_medium` / `large`  
-- `fee_type` → `licence_fee` / `immigration_skills_charge` / `visa_cost_employer_contrib`  
-- `amount_gbp`, `periodicity` → `one_off` or `yearly`  
-
-**`data_sql/periods.csv`**
-- `month_index` → 1..60  
-- `period_start_date` → ISO date for clarity  
+| Tool | Purpose |
+|------|----------|
+| **SQL (MySQL Workbench)** | Data modelling, ROI logic, and cumulative calculations |
+| **Python (pandas, matplotlib)** | CSV export and sanity-check visualizations |
+| **Tableau Public** | Dashboard creation, storytelling, and interactivity |
+| **GitHub** | Version control and public portfolio hosting |
 
 ---
 
-## 🧪 SQL Modelling (Step-by-Step & Easy to Explain)
+### 📈 Tableau Dashboard
 
-### ✅ Step 1 — Benefits Only (done)
-**Goal:** compute monthly **benefits** per scenario *before* costs.
+### 🔗 Dashboard
+- **Live Tableau:** [5-Year ROI of Sponsorship](https://public.tableau.com/app/profile/durga.chitti.srinivasarao.bejawada/vizzes)
 
-**Logic:**
-- Convert yearly → monthly parameters.
-- **Sponsorship:**  
-  `benefit[m] = base_monthly * (1 + growth_monthly)^(m-1) + loyalty_monthly`
-- **No Sponsorship:**  
-  `benefit[m] = base_monthly` (flat in Step 1)
+- **Download workbook (.twbx):** [outputs/5-Year ROI of Sponsorship_ A Data-Driven Case Study for UK Employers.twbx](outputs/5-Year%20ROI%20of%20Sponsorship_%20A%20Data-Driven%20Case%20Study%20for%20UK%20Employers.twbx)
 
-**Run locally (from repo root):**
-```bash
-# 1) Create DB and tables
-sqlite3 sponsorship_roi.db ".read sql/schema.sql"
+- **Preview image:**  
+  ![Dashboard preview](Dashboard1.png)
 
-# 2) Import raw CSVs
-sqlite3 sponsorship_roi.db ".mode csv" ".import data_sql/scenarios.csv scenarios"
-sqlite3 sponsorship_roi.db ".mode csv" ".import data_sql/fees.csv      fees"
-sqlite3 sponsorship_roi.db ".mode csv" ".import data_sql/periods.csv   periods"
 
-# 3) Create Step 1 benefits view
-sqlite3 sponsorship_roi.db ".read sql/analysis_step1.sql"
+---
 
-# 4) Sanity check: first 6 months
-sqlite3 sponsorship_roi.db "SELECT * FROM v_monthly_benefits_step1 WHERE month_index <= 6 ORDER BY scenario_id, month_index;"
+### 🗂️ Project Workflow
+
+1. **Data Preparation:** Defined sponsorship and non-sponsorship scenarios, fees, and retention assumptions in SQL.  
+2. **ROI Modelling:** Created monthly and annual cumulative ROI calculations using SQL views.  
+3. **Validation:** Verified output values against sanity checks (Month 1, Year 3, Year 5).  
+4. **Visualization:** Built Tableau dashboards to compare both scenarios visually.  
+5. **Publication:** Hosted full workflow on GitHub and Tableau Public for transparency.
+
+---
+
+### 🎯 Purpose
+This project demonstrates how **data analytics** can convert assumptions into business insights.  
+By quantifying sponsorship ROI, it challenges the misconception that “visa sponsorship is too costly” — showing instead that **investing in global talent yields measurable long-term value**.
+
+---
+
+### 🧾 License
+This project is licensed under the MIT License – feel free to explore, adapt, and build upon it.
+
+---
+
+### 👋 Author
+
+**Durga Chitti Srinivasarao Bejawada**  
+📊 *Data Analyst | SQL | Python | Tableau | Business Insights*  
+
+🔗 [Tableau Public Profile]([https://public.tableau.com/](https://public.tableau.com/app/profile/durga.chitti.srinivasarao.bejawada/viz/5-YearROIofSponsorshipAData-DrivenCaseStudyforUKEmployers/Dashboard1))  
+🔗 [LinkedIn](www.linkedin.com/in/durgabejawada)  
+🔗 [GitHub Portfolio](https://github.com/nivas4276)
