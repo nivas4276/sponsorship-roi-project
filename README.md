@@ -14,8 +14,8 @@ Using SQL for modelling and Tableau for visualization, I built a complete 5-year
 |---------|--------------|
 | **data_sql/** | Raw input data for base scenarios, sponsorship fees, and time periods. |
 | **sql/** | SQL scripts for creating tables, calculating ROI logic, and verifying outputs. |
-| **outputs/** | Final results — ROI CSVs, visual charts, and Tableau dashboard file (.twbx). |
-| **visualize_roi.py** | Python automation script for exporting SQL results and generating charts. |
+| **outputs/** | Final results — ROI CSVs, Tableau dashboard (.twbx), and exported visuals. |
+| **tableau/** | Contains the Tableau workbook and dashboard design files. |
 
 ---
 
@@ -34,8 +34,7 @@ Using SQL for modelling and Tableau for visualization, I built a complete 5-year
 | Tool | Purpose |
 |------|----------|
 | **SQL (MySQL Workbench)** | Data modelling, ROI logic, and cumulative calculations |
-| **Python (pandas, matplotlib)** | CSV export and sanity-check visualizations |
-| **Tableau Public** | Dashboard creation, storytelling, and interactivity |
+| **Tableau Public** | Dashboard creation, storytelling, and business visualization |
 | **GitHub** | Version control and public portfolio hosting |
 
 ---
