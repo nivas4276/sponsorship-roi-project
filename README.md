@@ -45,8 +45,6 @@ Using SQL for modelling and Tableau for visualization, I built a complete 5-year
 ### 🔗 Dashboard
 - **Live Tableau:** [5-Year ROI of Sponsorship](https://public.tableau.com/app/profile/durga.chitti.srinivasarao.bejawada/vizzes)
 
-- **Download workbook (.twbx):** [outputs/5-Year ROI of Sponsorship_ A Data-Driven Case Study for UK Employers.twbx](outputs/5-Year%20ROI%20of%20Sponsorship_%20A%20Data-Driven%20Case%20Study%20for%20UK%20Employers.twbx)
-
 - **Preview image:**  
   ![Dashboard preview](Dashboard.png)
 
@@ -79,6 +77,6 @@ This project is licensed under the MIT License – feel free to explore, adapt, 
 **Durga Chitti Srinivasarao Bejawada**  
 📊 *Data Analyst | SQL | Python | Tableau | Business Insights*  
 
-🔗 [Tableau Public Profile]([https://public.tableau.com/](https://public.tableau.com/app/profile/durga.chitti.srinivasarao.bejawada/viz/5-YearROIofSponsorshipAData-DrivenCaseStudyforUKEmployers/Dashboard1))  
+🔗 [Tableau Public Profile]([https://public.tableau.com/](https://public.tableau.com/app/profile/durga.chitti.srinivasarao.bejawada/viz/5-YearROIofSponsorshipAData-DrivenCaseStudyforUKEmployers/Dashboard1)  
 🔗 [LinkedIn](www.linkedin.com/in/durgabejawada)  
 🔗 [GitHub Portfolio](https://github.com/nivas4276)
